@@ -1,0 +1,57 @@
+{
+  "name": "google-docs-clone",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "module": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write .",
+    "start": "npm run build && node ./dist/app.js",
+    "dev": "nodemon --require @babel/register src/app.js",
+    "build": "rimraf dist && babel src -d dist"
+  },
+  "keywords": [],
+  "author": "elijah",
+  "license": "ISC",
+  "description": "backend for realtime text area interaction app",
+  "dependencies": {
+    "babel": "^5.8.38",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "express": "^4.21.1",
+    "lint-staged": "^15.2.10",
+    "mongoose": "^8.7.1",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.13.16",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.30.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3",
+    "rimraf": "^3.0.2"
+  },
+ "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.js": [
+        "eslint --fix",
+        "prettier --write"
+      ]
+    },
+  
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
