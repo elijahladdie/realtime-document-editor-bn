@@ -1,2 +1,2 @@
 export * from "./response.utils.js"
-export * from "./env.validator.js"
+export * from "./func.utils.js"

@@ -18,4 +18,6 @@ export const validateEnvVariables = () => {
   }
   
 
-  
+  export const mergeContent = (existingContent, newContent) => {
+    return existingContent + '\n' + newContent;
+}
